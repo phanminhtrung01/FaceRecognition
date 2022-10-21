@@ -13,13 +13,6 @@ test_data_folder_path = 'Test'
 haarcascade_frontalface = 'haarcascade_frontalface_alt.xml'
 
 
-detected_faces, face_labels = prepare_training_data("Training")
-
-eigenfaces_recognizer = cv2.face.EigenFaceRecognizer_create()
-
-eigenfaces_recognizer.train(detected_faces, np.array(face_labels))
-
-
 def detect_all_face(input_img):
     detect_faces  = []
 
@@ -60,7 +53,10 @@ def prepare_training_data(training_data_folder_path):
             image = cv2.imread(image_path)
             face, rect = detect_face(image)
 
-            if face is not -1:
+            if (isinstance(face, int)):
+                continue
+
+            if len(face) != -1:
                 resized_face = cv2.resize(face, (121,121), interpolation = cv2.INTER_AREA)
                 detected_faces.append(resized_face)
                 face_labels.append(lables[lablesName.index(dir_name)])
@@ -81,7 +77,8 @@ def predict(test_image):
     detected_faces = detect_all_face(test_image)
 
     for detected_face in detected_faces:
-        if (detect_face == -1):
+        if (detected_face == -1):
+           print('Unable to recognize the face')
            continue
         resized_test_image = cv2.resize(detected_face[0], (121,121), interpolation = cv2.INTER_AREA)
         #label = eigenfaces_recognizer.predict(resized_test_image)
@@ -94,7 +91,13 @@ def predict(test_image):
     return test_image
 
 
-test_image = cv2.imread(r"C:\Users\phanm\Downloads\tt.jpg")
+detected_faces, face_labels = prepare_training_data("Training")
+
+eigenfaces_recognizer = cv2.face.EigenFaceRecognizer_create()
+
+eigenfaces_recognizer.train(detected_faces, np.array(face_labels))
+
+test_image = cv2.imread(r"C:\Users\phanm\Downloads\hh.jpg")
 predicted_image = predict(test_image)
 
 cv2.imshow('1', predicted_image)
