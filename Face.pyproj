@@ -1,0 +1,83 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>6b9c70df-33e4-49de-9940-c34f9850b8d8</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Face.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Face</Name>
+    <RootNamespace>Face</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Face.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="haarcascade_frontalface_alt.xml" />
+    <Content Include="Test\Messi\MM.jpg" />
+    <Content Include="Test\Ronaldo\RR.jpg" />
+    <Content Include="Test\All\RRR.jpg" />
+    <Content Include="Test\Ronaldo\RRR.webp" />
+    <Content Include="Training\Messi\M.jpg" />
+    <Content Include="Training\Messi\M1.jpg" />
+    <Content Include="Training\Messi\M10.jpg" />
+    <Content Include="Training\Messi\M2.jpg" />
+    <Content Include="Training\Messi\M3.jpg" />
+    <Content Include="Training\Messi\M4.jpg" />
+    <Content Include="Training\Messi\M5.jpg" />
+    <Content Include="Training\Messi\M6.jpg" />
+    <Content Include="Training\Messi\M7.jpg" />
+    <Content Include="Training\Messi\M8.jpg" />
+    <Content Include="Training\Messi\M9.jpg" />
+    <Content Include="Training\Ronaldo\0.png" />
+    <Content Include="Training\Ronaldo\1.png" />
+    <Content Include="Training\Ronaldo\10.png" />
+    <Content Include="Training\Ronaldo\11.png" />
+    <Content Include="Training\Ronaldo\12.png" />
+    <Content Include="Training\Ronaldo\13.png" />
+    <Content Include="Training\Ronaldo\14.png" />
+    <Content Include="Training\Ronaldo\15.png" />
+    <Content Include="Training\Ronaldo\16.png" />
+    <Content Include="Training\Ronaldo\17.png" />
+    <Content Include="Training\Ronaldo\18.png" />
+    <Content Include="Training\Ronaldo\19.png" />
+    <Content Include="Training\Ronaldo\2.png" />
+    <Content Include="Training\Ronaldo\20.png" />
+    <Content Include="Training\Ronaldo\3.png" />
+    <Content Include="Training\Ronaldo\4.png" />
+    <Content Include="Training\Ronaldo\5.png" />
+    <Content Include="Training\Ronaldo\6.png" />
+    <Content Include="Training\Ronaldo\7.png" />
+    <Content Include="Training\Ronaldo\8.png" />
+    <Content Include="Training\Ronaldo\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test\" />
+    <Folder Include="Test\Messi\" />
+    <Folder Include="Test\All\" />
+    <Folder Include="Test\Ronaldo\" />
+    <Folder Include="Training\" />
+    <Folder Include="Training\Messi\" />
+    <Folder Include="Training\Ronaldo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
